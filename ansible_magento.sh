@@ -13,7 +13,8 @@ ansible-vault decrypt /tmp/ansible-magento2/group_vars/all.yml
 
 # Edits /group_vars/all.yml and replace ip, host
 read ip < /tmp/public_ip.txt
-sudo sed -i "s/your-domain/anr4x4.com.br/g" /tmp/ansible-magento2/group_vars/all.yml
+read my_domain < /tmp/sitename.txt
+sudo sed -i "s/your-domain/$my_domain/g" /tmp/ansible-magento2/group_vars/all.yml
 sudo sed -i "s/3.237.236.99/$ip/g" /tmp/ansible-magento2/group_vars/all.yml
 
 # Replace Magento Keys
@@ -22,7 +23,7 @@ sudo sed -i "s/3.237.236.99/$ip/g" /tmp/ansible-magento2/group_vars/all.yml
 # Encrypts back all.yml so it can be pushed safely to a repo
 ansible-vault encrypt /tmp/ansible-magento2/group_vars/all.yml
 
-# Move to folder and run playbook
+# Runs playbook
 ansible-playbook -i hosts.yml ansible-magento2.yml -vvv --become
 
 # Deletes .vault_pass
