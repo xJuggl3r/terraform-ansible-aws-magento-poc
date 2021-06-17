@@ -1,0 +1,12 @@
+secret.tfvars
+
+**/.vault_pass
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
