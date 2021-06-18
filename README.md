@@ -30,9 +30,10 @@ Magento | PHP | MySQL | Redis
 ### Security
 - All sensitive data is encrypted using `ansible-vault`
   - The code can be safely updated to a repository
+- Use of Git pre-commit hook to prevent committing AWS and other sensitive keys
 
 ### Production
-- If POC is approved, e-commerce will be then dockerized, autoscalable, load balanced and multi-AZ.
+- If POC is approved, e-commerce will be then dockerized into multiple containers, autoscalable, load balanced and multi-AZ.
 
 
 

@@ -11,7 +11,7 @@ export ANSIBLE_VAULT_PASSWORD_FILE=/tmp/ansible-magento2/.vault_pass
 cd /tmp/ansible-magento2
 ansible-vault decrypt /tmp/ansible-magento2/group_vars/all.yml
 
-# Edits /group_vars/all.yml and replace ip, host
+# Edits /group_vars/all.yml and replace magento_domain, host
 read ip < /tmp/public_ip.txt
 read my_domain < /tmp/sitename.txt
 sudo sed -i "s/your-domain/$my_domain/g" /tmp/ansible-magento2/group_vars/all.yml
