@@ -38,6 +38,37 @@ resource "aws_instance" "web" {
     destination = "/tmp/ansible_magento.sh"
   }
 
+  #Copies certs 
+  provisioner "file" {
+    source      = "./certs/localhost.crt"
+    destination = "/tmp/localhost.crt"
+  }
+
+  #Copies cert_key 
+  provisioner "file" {
+    source      = "./certs/localhost.key"
+    destination = "/tmp/localhost.key"
+  }
+
+  #Copies cert_bundle 
+  provisioner "file" {
+    source      = "./certs/ca-bundle.crt"
+    destination = "/tmp/ca-bundle.crt"
+  }
+
+  #Copies cert_bundle-client 
+  provisioner "file" {
+    source      = "./certs/ca-bundle-client.crt"
+    destination = "/tmp/ca-bundle-client.crt"
+  }
+
+  #Copies cert_bundle_anr 
+  provisioner "file" {
+    source      = "./certs/anr4x4_com_br.crt"
+    destination = "/tmp/anr4x4_com_br.crt"
+  }
+
+
   #Runs ansible-magento script
   provisioner "remote-exec" {
     inline = [
