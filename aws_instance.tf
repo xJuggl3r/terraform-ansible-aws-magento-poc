@@ -1,12 +1,12 @@
 # Provides an EC2 instance resource.
 resource "aws_instance" "web" {
   # ami                         = "ami-0747bdcabd34c712a" #Ubuntu 18 us-east-1
-  ami                         = "ami-032930428bf1abbff" #Amazon Linux us-east-1
-  instance_type               = "t3a.medium"            # Minimum shape for a Magento instance
+  ami                         = var.ami           #Amazon Linux us-east-1
+  instance_type               = var.instance_type # Minimum shape for a Magento instance
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.public.id
   vpc_security_group_ids      = [aws_security_group.instance.id]
-  key_name                    = "automation"
+  key_name                    = var.key_name
   tags                        = { Name = var.app }
 
   connection {

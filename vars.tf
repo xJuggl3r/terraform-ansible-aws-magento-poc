@@ -15,3 +15,7 @@ variable "key_pair_location" {
 }
 
 variable "site_name" { type = string }
+
+variable "ami" { type = string }
+variable "instance_type" { type = string }
+variable "key_name" { type = string }
