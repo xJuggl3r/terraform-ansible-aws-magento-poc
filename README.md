@@ -26,6 +26,7 @@ Magento | PHP | MySQL | Redis
 </figure>
 
 ## Points of Observation
+Secure CI/CD will be implemented after Vault is implemented
 
 ### Security
 - All sensitive data is encrypted using `ansible-vault`
@@ -33,6 +34,14 @@ Magento | PHP | MySQL | Redis
 
 ### Production
 - If POC is approved, e-commerce will be then dockerized into multiple containers, autoscalable, load balanced and multi-AZ.
+
+### PDF
+- <a href="#" target="_blank">here.</a>
+
+### TODO
+- Change from EIP to ELB
+- Full SSL/TLS cert creation and validation.
+- Implementation of Vault for centralized keys management
 
 
 

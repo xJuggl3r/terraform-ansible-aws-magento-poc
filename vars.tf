@@ -19,3 +19,8 @@ variable "site_name" { type = string }
 variable "ami" { type = string }
 variable "instance_type" { type = string }
 variable "key_name" { type = string }
+
+variable "cert_value" { type = string }
+variable "cert_key" { type = string }
+variable "www_cert_value" { type = string }
+variable "www_cert_key" { type = string }
