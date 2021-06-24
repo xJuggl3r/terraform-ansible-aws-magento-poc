@@ -8,7 +8,7 @@ module "notify_slack" {
 
   sns_topic_name = "Teste-ChatBot-CPU"
 
-  slack_webhook_url = "https://hooks.slack.com/services/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"
+  slack_webhook_url = { var.slack_webhook }
   slack_channel     = "tcb-chatbot"
   slack_username    = "criptonauta"
 

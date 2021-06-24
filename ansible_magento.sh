@@ -42,19 +42,19 @@ echo -e "${GREEN} ====== Ansible will play your book now ====== ${ENDCOLOR}"
 # Runs playbook
 ansible-playbook -i hosts.yml ansible-magento2.yml -vvv --become
 
-echo -e "${GREEN} ====== HTTPS party time ====== ${ENDCOLOR}"
-# Decrypts certs and moves them to right place
-ansible-vault decrypt /tmp/localhost.crt /tmp/localhost.key /tmp/ca-bundle.crt
-sudo chmod 600 /tmp/localhost.crt /tmp/localhost.key /tmp/ca-bundle.crt
-sudo cp /tmp/localhost.crt /etc/pki/tls/certs/localhost.crt
-sudo cp /tmp/localhost.key /etc/pki/tls/private/localhost.key
-sudo cp /tmp/ca-bundle.crt /etc/pki/tls/certs/ca-bundle.crt
-sudo sed -i "s/#SSLCACertificateFile/SSLCACertificateFile/g" /etc/httpd/conf.d/ssl.conf
-sudo sed -i "s/#ServerName/ServerName/g" /etc/httpd/conf.d/ssl.conf
-sudo sed -i "s/www.example.com/anr4x4.com.br/g" /etc/httpd/conf.d/ssl.conf
+# echo -e "${GREEN} ====== HTTPS party time ====== ${ENDCOLOR}"
+# # Decrypts certs and moves them to right place
+# ansible-vault decrypt /tmp/localhost.crt /tmp/localhost.key /tmp/ca-bundle.crt
+# sudo chmod 600 /tmp/localhost.crt /tmp/localhost.key /tmp/ca-bundle.crt
+# sudo cp /tmp/localhost.crt /etc/pki/tls/certs/localhost.crt
+# sudo cp /tmp/localhost.key /etc/pki/tls/private/localhost.key
+# sudo cp /tmp/ca-bundle.crt /etc/pki/tls/certs/ca-bundle.crt
+# sudo sed -i "s/#SSLCACertificateFile/SSLCACertificateFile/g" /etc/httpd/conf.d/ssl.conf
+# sudo sed -i "s/#ServerName/ServerName/g" /etc/httpd/conf.d/ssl.conf
+# sudo sed -i "s/www.example.com/anr4x4.com.br/g" /etc/httpd/conf.d/ssl.conf
 
-sudo cp /tmp/ca-bundle.crt /etc/pki/tls/certs/ca-bundle-client.crt
-sudo cp /tmp/ca-bundle.crt /etc/pki/tls/certs/anr4x4_com_br.crt
+# sudo cp /tmp/ca-bundle.crt /etc/pki/tls/certs/ca-bundle-client.crt
+# sudo cp /tmp/ca-bundle.crt /etc/pki/tls/certs/anr4x4_com_br.crt
 
 echo -e "${GREEN} ====== Die, Apache! May your soul rise again! ${ENDCOLOR}"
 # Restarts Apache
