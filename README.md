@@ -36,7 +36,7 @@ Secure CI/CD will be implemented after Vault is implemented
 - If POC is approved, e-commerce will be then dockerized into multiple containers, autoscalable, load balanced and multi-AZ.
 
 ### PDF
-- <a href="#" target="_blank">here.</a>
+- <a href="https://www.linkedin.com/posts/ashtorres_prova-de-conceito-de-e-commerce-na-aws-usando-activity-6813980305540571137-fKZw" target="_blank">Here.</a>
 
 ### TODO
 - Change from EIP to ELB
